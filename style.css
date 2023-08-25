@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  background: #000;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  perspective: 100px;
+  perspective-origin: 100% 100%;
+}
+
+.cube {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transforme-style: preserve-3d;
+  animation: rotate 6s linear infinite;
+}
+
+.cube > div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.9;
+  background: linear-gradient(to right, #09adcb, #001f4e);
+}
+
+.side1 {
+  transform: translateZ(100px);
+}
+
+.side2 {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.side3 {
+  transform: rotateY(1800deg) translateZ(100px);
+}
+
+.side4 {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.side5 {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.side6 {
+  transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
